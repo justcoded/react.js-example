@@ -1,0 +1,72 @@
+/* qr code style */
+
+.content {
+  &__code-wrap {
+    border-left: 42px solid $green;
+    padding: 0 52px;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include media('<widescreen-sm') {
+      padding: 0 25px;
+      border-width: 22px;
+    }
+  }
+  &__qr-text {
+    font-size: 34px;
+    line-height: 46px;
+    display: block;
+    margin: 0 0 20px;
+    color: #a3a3a3;
+    text-align: center;
+    @include media('<widescreen-md') {
+      font-size: 31px;
+      line-height: 33px;
+    }
+    @include media('<widescreen-sm') {
+      font-size: 26px;
+      line-height: 28px;
+      margin: 0 0 15px;
+    }
+  }
+  &__code {
+    width: 300px;
+    margin: 0 auto 20px;
+    border: 20px solid white;
+    @include media('<widescreen-sm') {width: 180px;}
+    @include media('>=widescreen-sm', 'height<=height-lg') {width: 200px;}
+    @include media('>=widescreen-sm', 'height<=1065px') {width: 250px;}
+     @include media('>=widescreen-sm', 'height<=1015px') {width: 200px;}
+  }
+  &__qr-link {
+    text-decoration: none;
+    color: $white;
+    font-size: 34px;
+    line-height: 36px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 5px;
+    @include media('<widescreen-sm') {
+      font-size: 26px;
+      line-height: 28px;
+      margin: 0 0 15px;
+    }
+  }
+  &__qr-btn {
+    border-color: red;
+    color: red;
+    min-width: 500px;
+    flex-shrink: 0;
+    @include media('<widescreen-lg') {
+      min-width: 350px;
+    }
+    .icon-close {margin: 0 16px 0 0;}
+  }
+  &__code-img canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

@@ -1,0 +1,63 @@
+/* common style */
+
+.page {
+  @include font-smoothing(on);
+  color: $base-text-color;
+  background: $base-background-color;
+  font: #{$base-font-size}/#{$base-line-height} $base-font-family;
+  min-width: $base-min-width;
+  background: #0e0e0f;
+  height: 100vh;
+  margin: 0;
+  &__wrapper {
+    height: 100%;
+  }
+  &__holder {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__msg {
+    color: red;
+    font-size: 40px;
+    line-height: 42px;
+    display: block;
+    margin: 15px 0;
+    @include media('<widescreen-sm') {
+      font-size: 27px;
+      line-height: 29px;
+    }
+    @include media('>=widescreen-sm', 'height<=height-lg') {
+      font-size: 27px;
+      line-height: 29px;
+    }
+  }
+  &__form-error {
+    position: absolute;
+    color: red;
+    top: 100%;
+    text-align: center;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    font-size: 25px;
+    line-height: 22px;
+  }
+}
+
+.main {
+  box-sizing: border-box;
+  flex: auto;
+  display: flex;
+  justify-content: center;
+  padding: 63px 90px 125px 188px;
+  margin: 0 auto;
+  width: 100%;
+  @include media('<widescreen-lg') {padding: 63px 60px 125px 119px;}
+  @include media('<widescreen-md') {padding: 80px 45px 80px 95px;}
+  @include media('<widescreen-sm') {padding: 80px 30px 80px 70px;}
+  @include media('>=widescreen-md' and '<widescreen-lg', 'height<=height-lg') {padding: 30px 60px 30px 100px;}
+  @include media('>=widescreen-sm' and '<widescreen-md', 'height<=height-lg') {padding: 43px 45px 43px 90px;}
+  @include media('>=widescreen-s' and '<widescreen-md', 'height<=height-lg') {padding: 60px 30px 60px 75px;}
+  @include media('>=widescreen-lg', 'height<=height-lg') {padding: 43px 90px 43px 140px;}
+}

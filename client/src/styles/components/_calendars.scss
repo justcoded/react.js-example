@@ -1,0 +1,61 @@
+ /* calendars list style */
+
+ .content {
+  &__calendar-wrap {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 72px;
+    @include media('<widescreen-sm') { margin: 0 0 30px;}
+    @include media('>=widescreen-sm', 'height<=height-lg') {margin: 0 0 30px;}
+  }
+  &__calendar-title {
+    font-size: 50px;
+    line-height: 52px;
+    font-weight: bold;
+    color: $color-h3;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 72px;
+    @include media('<widescreen-sm') {
+      font-size: 32px;
+      line-height: 34px;
+      margin: 0 0 55px;
+    }
+    @include media('>=widescreen-sm', 'height<=height-lg') {margin: 0 0 55px;}
+  }
+  &__calendars {
+    @extend %listreset;
+    flex: auto;
+    color: $white;
+    font-size: 45px;
+    line-height: 47px;
+    font-weight: 700;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 40px;
+    overflow: auto;
+    flex: 1 1 0;
+    flex-basis: 0;
+    border-left: 42px solid $green;
+    @include media('<widescreen-sm') {
+      font-size: 25px;
+      line-height: 27px;
+      border-width: 22px;
+    }
+    @include media('>=widescreen-sm', 'height<=height-lg') {height: 500px;}
+  }
+  &__calendar-item {
+    margin: 0 0 21px;
+    @include media('<widescreen-sm') {margin: 0 0 18px;}
+  }
+  &__calendar-link {
+    text-decoration: none;
+    color: $white;
+  }
+  &__btn-cancel {
+    width: auto;
+    max-width: 300px;
+    min-width: 300px;
+  }
+}

@@ -1,0 +1,138 @@
+/* form style */
+
+.content {
+  &__form {
+    width: 100%;
+    position: relative;
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  &__form-wrap {
+    display: flex;
+    flex-direction: column;
+    border-left: 42px solid $green;
+    padding: 0 43px;
+    box-sizing: border-box;
+    width: 100%;
+    flex: auto;
+    margin: 0 0 75px;
+    @include media('<widescreen-sm') {
+      padding: 0 25px;
+      border-width: 22px;
+      margin: 0 0 30px;
+    }
+    @include media('>=widescreen-sm', 'height<=height-md') {margin: 0 0 30px;}
+  }
+  &__form-title {
+    font-size: 70px;
+    line-height: 72px;
+    color: $white;
+    margin: 0 0 35px;
+    @include media('<widescreen-lg') {
+      font-size: 70px;
+      line-height: 72px;
+    }
+    @include media('<widescreen-md') {
+      font-size: 55px;
+      line-height: 57px;
+    }
+    @include media('<widescreen-sm') {
+      font-size: 47px;
+      line-height: 49px;
+      margin: 0 0 40px;
+    }
+    @include media('>=widescreen-sm', 'height<=height-md') {
+      margin: 0 0 30px;
+      font-size: 60px;
+      line-height: 62px;
+    }
+  }
+  &__select-wrap {
+    display:flex;
+    justify-content: space-between;
+    .content__select-box {width: 49%;}
+  }
+  &__form-row {margin: 0 0 30px;}
+  &__select-block-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__select-box {
+    margin: 0 0 30px;
+    @include media('<widescreen-sm') {margin: 0 0 25px;}
+    @include media('>=widescreen-sm', 'height<=height-md') {margin: 0 0 25px;}
+  }
+  &__select-block {width: 48%;}
+  &__input-label,
+  &__select-label {
+    display: block;
+    color: $white;
+    font-size: 40px;
+    line-height: 42px;
+    font-weight: bold;
+    margin: 0 0 20px;
+    @include media('<widescreen-md') {
+      font-size: 30px;
+      line-height: 32px;
+    }
+    @include media('<widescreen-sm') {
+      font-size: 25px;
+      line-height: 27px;
+      margin: 0 0 5px;
+    }
+    @include media('>=widescreen-sm', 'height<=height-md') {
+      font-size: 36px;
+      line-height: 38px;
+      margin: 0 0 10px;
+    }
+  }
+  &__form-input,
+  &__form-select {
+    font-size: 28px;
+    line-height: 50px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #a3a3a3;
+    padding: 0 20px;
+    &:focus {outline: none;}
+    @include media('<widescreen-sm') {font-size: 20px;}
+    @include media('>=widescreen-sm', 'height<=height-md') {
+      height: 40px;
+      line-height: 40px;
+    }
+    @include media('<widescreen-md') {padding: 0 5px;}
+    @include media('<widescreen-sm') {
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+  &__btn-form-wrap {
+    display:flex;
+    justify-content: space-between;
+  }
+  .btn--cancel,
+  &__form-btn {width: 49%;}
+  &__form-icon {
+    font-size: 30px;
+    margin: 0 16px 0 0;
+  }
+  &__form-error {text-align: center;}
+  &__error-form-msg {
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100%;
+    color: red;
+    font-size: 25px;
+    line-height: 27px;
+    @include media('<widescreen-md') {
+      font-size: 20px;
+      line-height: 22px;
+    }
+  }
+}

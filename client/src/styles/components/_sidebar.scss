@@ -1,0 +1,184 @@
+/* sidebar style */
+
+$color-panel-title: #e9e9e9;
+$border-color-item: #a90c0c;
+$color-item-time: #a90c0c;
+$color-item-title: #d5d5d5;
+
+.sidebar {
+	max-width: 515px;
+	min-width: 515px;
+	display: flex;
+	flex-direction: column;
+	@include media('<widescreen-lg') {
+		max-width: 420px;
+		min-width: 420px;
+	}
+	@include media('<widescreen-sm') {
+		max-width: 350px;
+		min-width: 350px;
+	}
+	&__panel {
+		flex-shrink: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 0 52px;
+		@include media('<widescreen-sm') {margin: 0 0 30px;}
+		@include media('>=widescreen-sm', 'height<=height-lg') {margin: 0 0 20px;}
+	}
+	&__btn {
+		height: auto;
+		@include media('<widescreen-md') {min-width: 160px;}
+	}
+	&__panel-title {
+		font-size: 42px;
+		line-height: 43px;
+		font-weight: bold;
+		color: $color-panel-title;
+		@include media('<widescreen-md') {
+			font-size: 37px;
+			line-height: 39px;
+		}
+		@include media('<widescreen-sm') {
+			font-size: 26px;
+			line-height: 28px;
+		}
+	}
+	&__holder {
+		overflow: hidden;
+		height: 100%;
+		flex: 1 1 0;
+		flex-basis: 0;
+		display: flex;
+		flex-direction: column;
+	}
+	&__time {
+		color: $color-item-time;
+		font-size: 42px;
+		line-height: 44px;
+		font-weight: bold;
+		margin: 0 0 12px;
+		display: block;
+		text-transform: uppercase;
+		@include media('<widescreen-lg') {
+			font-size: 35px;
+			line-height: 37px;
+		}
+		@include media('>=widescreen-sm', 'height<=height-lg') {
+			font-size: 32px;
+			line-height: 34px;
+		}
+		@include media('<widescreen-sm') {
+			font-size: 25px;
+			line-height: 27px;
+			margin: 0 0 5px;
+		}
+		&:only-child {
+			margin: 0;
+			padding: 20px 0 0;
+			@include media('<widescreen-sm') {padding: 0;}
+			@include media('>=widescreen-sm', 'height<=height-lg') {padding: 0;}
+		}
+	}
+	&__title {
+		display: block;
+		font-size: 42px;
+		line-height: 44px;
+		font-weight: bold;
+		color: $color-item-title;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+		@include media('<widescreen-lg') {
+			font-size: 32px;
+			line-height: 34px;
+		}
+		@include media('<widescreen-sm') {
+			font-size: 25px;
+			line-height: 27px;
+		}
+	}
+	&__list {
+		@extend %listreset;
+		overflow: auto;
+		max-height: 100%;
+		margin: 0 100% 0 0;
+		padding: 0 100% 0 0;
+		width: 100%;
+	}
+	&__item {
+		margin: 0 0 20px;
+		padding: 24px 20px 44px 50px;
+		border-left: 10px solid $border-color-item;
+		background: #090909;
+		&:last-child {margin: 0;}
+		@include media('<widescreen-lg') {padding: 24px 0 44px 24px;}
+		@include media('<widescreen-sm') {
+			padding: 15px 0 15px 30px;
+			border-left: 5px solid $border-color-item;
+		}
+		@include media('>=widescreen-sm', 'height<=height-lg') {padding: 15px 0 15px 50px;}
+	}
+	&__icon-btn {
+		font-size: 28px;
+		margin: 0 16px 0 0;
+	}
+	&__info-events {
+		font-size: 22px;
+		line-height: 24px;
+		font-weight: bold;
+		color: #a3a3a3;
+		margin: 0 0 15px;
+		display: block;
+	}
+
+	/* sidebar navigation buttons style */
+	&__nav-btn {
+		display:flex;
+		justify-content: space-between;
+		flex-shrink: 0;
+		margin: 25px auto 0;
+		max-width: 305px;
+		width: 100%;
+		@include media('<widescreen-md') {max-width: 240px;}
+		@include media('<widescreen-sm') {max-width: 200px;}
+		@include media('>=widescreen-sm', 'height<=height-lg') {max-width: 250px;}
+	}
+	&__next,
+	&__prev {
+		@include animate (opacity visibility);
+		font-size: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 20px;
+		min-width: 101px;
+		-webkit-tap-highlight-color: transparent;
+		@include media('<widescreen-md') {
+			min-width: 70px;
+			max-width: 70px;
+		}
+		@include media('<widescreen-sm') {
+			min-width: 60px;
+			max-width: 60px;
+			font-size: 40px;
+		}
+		@include media('>=widescreen-sm', 'height<=height-lg') {
+			min-width: 80px;
+			max-width: 80px;
+		}
+	}
+	&__nav-btn--disabled {
+		pointer-events: none;
+		opacity: .3;
+	}
+	&__nav-btn--hidden {
+		display: none;
+		opacity: 0;
+	}
+	&__bnt--active {
+		color: red;
+		border-color: red;
+	}
+}

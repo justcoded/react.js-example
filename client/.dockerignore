@@ -1,0 +1,5 @@
+.idea
+.git
+.env
+node_modules
+build

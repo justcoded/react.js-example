@@ -1,0 +1,1 @@
+export const PIXEL_COUNT_SCROLL = 50;

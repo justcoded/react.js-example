@@ -1,0 +1,18 @@
+version: '3'
+services:
+  client:
+    build: ./client
+    expose:
+      - "80"
+    ports:
+      - "80:80"
+    env_file:
+      - .env.client
+  server:
+    build: ./server
+    expose:
+      - "8090"
+    ports:
+      - "8090:8090"
+    env_file:
+      - .env.server 

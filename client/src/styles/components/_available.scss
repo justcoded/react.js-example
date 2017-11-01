@@ -1,0 +1,79 @@
+/* available section style*/
+
+.content {
+  &__available {
+    border-left: 42px solid $green;
+    padding: 100px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include media('<widescreen-lg') {padding: 80px 0;}
+    @include media('<widescreen-md') {padding: 60px 0;}
+    @include media('<widescreen-sm') {
+      padding: 40px 0;
+      border-width: 22px;
+    }
+    @include media('>=widescreen-sm', 'height<=height-lg') {padding: 40px 0;}
+  }
+  &__h5 {
+    font-size: 91px;
+    line-height: 93px;
+    font-weight: bold;
+    margin: 0 0 30px;
+    color: $green;
+    @include media('<widescreen-lg') {
+      font-size: 80px;
+      line-height: 82px;
+    }
+    @include media('<widescreen-md') {
+      font-size: 60px;
+      line-height: 62px;
+    }
+    @include media('<widescreen-sm') {
+      font-size: 55px;
+      line-height: 57px;
+    }
+    @include media('>=widescreen-sm', 'height<=height-lg') {
+      font-size: 65px;
+      line-height: 67px;
+      margin: 0 0 40px;
+    }
+  }
+  &__time-box {
+    font-size: 63px;
+    line-height: 65px;
+    color: #6d6d6d;
+    font-weight: bold;
+    margin: 0 0 60px;
+    @include media('<widescreen-lg') {
+      font-size: 55px;
+      line-height: 57px;
+    }
+    @include media('<widescreen-md') {
+      font-size: 50px;
+      line-height: 52px;
+      margin: 0 0 40px;
+    }
+    @include media('<widescreen-sm') {
+      font-size: 40px;
+      line-height: 42px;
+    }
+    @include media('>=widescreen-sm', 'height<=height-lg') {
+      font-size: 45px;
+      line-height: 47px;
+      margin: 0 0 40px;
+    }
+  }
+  &__available-btn {
+    min-width: 500px;
+    flex-shrink: 0;
+    @include media('<widescreen-lg') {min-width: 350px;}
+  }
+  &__available-icon {
+    font-size: 48px;
+    margin: 0 16px 0 0;
+    @include media('<widescreen-lg') {font-size: 40px;}
+  }
+}

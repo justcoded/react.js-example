@@ -1,0 +1,91 @@
+/* buttons style */
+
+$btn-border: $green;
+$btn-color: $green;
+$btn-secondary-color: $yellow;
+$btn-secondary-border: $yellow;
+
+.btn {
+  font: bold 42px/1 $base-font-sans-serif;
+  border: 1px solid $btn-border;
+  box-sizing: border-box;
+  color: $btn-color;
+  padding: 20px 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  min-width: 213px;
+  background: none;
+  height: 101px;
+  border-radius: 2px;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  @include media('<widescreen-md') {
+    font-size: 30px;
+    height: 70px;
+    padding: 10px;
+  }
+  @include media('<widescreen-sm') {
+    min-width: 150px;
+    font-size: 26px;
+    height: 60px;
+  }
+  @include media('>=widescreen-sm', 'height<=height-lg') {
+    font-size: 35px;
+    padding: 15px;
+    height: 80px;
+  }
+  &:focus {
+    outline: none;
+  }
+  &--secondary {
+    border-color: $btn-secondary-border;
+    color: $btn-secondary-color;
+  }
+  &--cancel {
+    border-color: red;
+    color: red;
+  }
+  &--active {
+    border-color: red;
+    color: red;
+  }
+  .icon-close {
+    margin: 0 16px 0 -27px;
+    font-size: 52px;
+    @include media('<widescreen-md') {font-size: 43px;}
+    @include media('<widescreen-sm') {font-size: 30px;}
+  }
+  .icon-check {
+    width: 55px;
+    height: 55px;
+    display: block;
+    background: $yellow;
+    margin: 0 28px 0 -48px;
+    @include media('<widescreen-md') {
+      width: 40px;
+      height: 40px;
+    }
+    @include media('<widescreen-sm') {
+      width: 35px;
+      height: 35px;
+    }
+    &:before {
+      @include vertical-align;
+      font-size: 30px;
+      color: #000;
+      display: block;
+      text-align: center;
+      @include media('<widescreen-md') {font-size: 25px;}
+      @include media('<widescreen-sm') {font-size: 20px;}
+    }
+  }
+}
+
+.content__btn-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
